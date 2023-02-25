@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 const Anuncio = require('../../models/Anuncio')
 
-//CRUD: create, read, update, delete
+// CRUD: create, read, update, delete
 // GET /api/anuncios
 // devuelve una lista de anuncios
 // devuelve una lista de anuncios filtrada por nombres
@@ -23,7 +23,7 @@ router.get('/', async(req, res, next) => {
         const filtro = {}
 
         if (filterByNombre) {
-            filtro.nombre = filterByNombre
+            filtro.nombre = new RegExp('^' + filterByNombre, "i")
         }
 
         if (filterByVenta) {
@@ -35,12 +35,12 @@ router.get('/', async(req, res, next) => {
         }
 
         if (filterByTags) {
-            filtro.tags = filterByTags
+            filtro.tags = new RegExp('^' + filterByTags, "i")
         }
 
         const anuncios = await Anuncio.lista(filtro, skip)
 
-        //obtenemos agentes de la base de datos
+        //obtenemos anuncios de la base de datos
 
         res.json({ results: anuncios })
     } catch (error) {
@@ -68,5 +68,30 @@ router.post('/', async(req, res, next) => {
         next(error)
     }
 })
+
+// Delete /api/anuncios/:(id) Eliminar un anuncio 
+
+router.delete("/:id", async (req, res,next) => {
+    try {
+        const id = req.params.id
+        await Anuncio.deleteOne ({ _id: id })
+        res.json({ deleted: true })
+
+    } catch (error) {
+        next(error)
+        
+    }
+})
+
+/* GET home page. */
+router.get('/tags', async function(req, res, next) {
+    try {
+      res.json({results:["mobile", "motor", "lifestyle", "work"]})
+      
+    } catch (error) {
+      next(error)
+    }
+      
+    });
 
 module.exports = router

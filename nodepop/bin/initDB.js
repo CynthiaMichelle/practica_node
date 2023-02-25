@@ -39,35 +39,35 @@ const anuncios = [
         "nombre": "iPhone 3GS",
         "venta": false,
         "precio": 50.00,
-        "foto": "iphone.png",
+        "foto": "iphone.jpg",
         "tags": [ "lifestyle", "mobile"]
     },
     {
         "nombre": "Kettlebell 12kg",
         "venta": false,
         "precio": 40.00,
-        "foto": "",
+        "foto": "kettlebell.jpg",
         "tags": [ "lifestyle", "work"]
     },
     {
         "nombre": "Lampara",
         "venta": false,
         "precio": 35.00,
-        "foto": "",
+        "foto": "lampara.jpg",
         "tags": [ "lifestyle", "work"]
     },
     {
         "nombre": "Silla Escritorio",
         "venta": true,
         "precio": 110.00,
-        "foto": "",
+        "foto": "silla.jpg",
         "tags": [ "work", "lifestyle"]
     },
     {
         "nombre": "Samsung tablet s7",
         "venta": false,
         "precio": 185.00,
-        "foto": "",
+        "foto": "tablet.jpg",
         "tags": [ "lifestyle", "mobile"]
     }            
 ]

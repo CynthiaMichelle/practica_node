@@ -66,7 +66,9 @@ npm run dev
  Tenemos 3 metodos
  
  Delete : Para eliminar anuncios
+
  Post : Para crea anuncios
+ 
  Get : Con posibles filtrados (nombre, venta, precio, tags). Además en nombre y tags es insesible a minusculas y mayuscula
 
  Por ejemplo esta búsqueda nos devuelve el anuncio de la bicicleta:

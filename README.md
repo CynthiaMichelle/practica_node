@@ -2,7 +2,7 @@
 
 ## App NodePop
 
-### Pasos a seguir para ejecutaar la app
+### Pasos a seguir para ejecutar la app
 
 #### Clonar repositorio
 

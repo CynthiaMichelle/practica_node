@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <h2>Tablón de anuncios</h2>
+        <% anuncios.forEach(anuncio => { %>
+        <!-- <img src="/images/agentes/<%= anuncio.imagen %>" alt="" -->
+        <div> 
+          <h3><strong>Articulo: <%= anuncio.nombre %> | <%= anuncio.venta_string %></strong></h3> 
+            <p>Precio <%= anuncio.precio %>€. Tags: <%= anuncio.tags %></p>            
+        </div>
+        <% }) %>
+
+  </body>
+</html>
